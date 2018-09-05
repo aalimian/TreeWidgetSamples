@@ -28,4 +28,6 @@ MyTreeWidget::MyTreeWidget(QWidget *parent) : QTreeWidget(parent) {
     usRow->addChild(nyRow);
 
     addTopLevelItem(usRow);
+
+    connect(this, &QTreeWidget::itemSelectionChanged, [&] { qDebug() << selectedItems().size(); });
 }
